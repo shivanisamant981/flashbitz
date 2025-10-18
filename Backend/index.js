@@ -1,7 +1,8 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const app=express();
-
+const dotenv=require("dotenv")
+dotenv.config();
 
 const dbconnect=async()=>{
     try{
@@ -16,8 +17,9 @@ const dbconnect=async()=>{
 
 }
 
-app.listen(3000,async()=>{
+app.listen(process.env.PORT,async()=>{
     await dbconnect();
+    console.log("the server is running on port "+process.env.PORT);
     
 })
 

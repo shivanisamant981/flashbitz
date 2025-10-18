@@ -38,3 +38,4 @@ const User=mongoose.model("Users",UserSchema);
 module.exports={User,
 
 }
+console.log("successfully")
